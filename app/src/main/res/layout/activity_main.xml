@@ -13,9 +13,22 @@
         android:layout_height="wrap_content"
         android:text="toast" />
 
-    <Button
-        android:id="@+id/bt_common_snackbar"
-        android:text="普通的snackbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_common_snackbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="普通的snackbar" />
+
+        <Button
+            android:id="@+id/bt_style_snackbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="snackbar的样式" />
+
+    </LinearLayout>
 </LinearLayout>

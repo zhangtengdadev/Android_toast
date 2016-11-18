@@ -1,5 +1,6 @@
 package zhang.test.toastview;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_toast, R.id.bt_common_snackbar})
+    @OnClick({R.id.bt_toast, R.id.bt_common_snackbar, R.id.bt_style_snackbar})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_toast: // 吐司
@@ -36,7 +37,15 @@ public class MainActivity extends AppCompatActivity {
             case R.id.bt_common_snackbar:// 普通的snackbar
                 openCommonSnackBar(view);
                 break;
+
+            case R.id.bt_style_snackbar:// snackbar的样式
+                openStyleSnackBar(view, this);
+                break;
         }
+    }
+
+    private void openStyleSnackBar(View view, Context context) {
+        SnackBarUtil.StyleSnackBar(view, context);
     }
 
     private void openCommonSnackBar(View view) {

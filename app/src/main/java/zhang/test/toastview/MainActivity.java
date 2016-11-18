@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import zhang.test.toastview.Util.SnackBarUtil;
 import zhang.test.toastview.Util.ToastUtils;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,13 +26,21 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_toast})
+    @OnClick({R.id.bt_toast, R.id.bt_common_snackbar})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_toast: // 吐司
                 openToast();
                 break;
+
+            case R.id.bt_common_snackbar:// 普通的snackbar
+                openCommonSnackBar(view);
+                break;
         }
+    }
+
+    private void openCommonSnackBar(View view) {
+        SnackBarUtil.CommonSnackBar(view);
     }
 
     private void openToast() {

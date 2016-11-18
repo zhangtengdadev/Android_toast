@@ -4,6 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="zhang.test.toastview.MainActivity">
 
     <Button
@@ -11,4 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="toast" />
+
+    <Button
+        android:id="@+id/bt_common_snackbar"
+        android:text="普通的snackbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -17,6 +17,17 @@ import zhang.test.toastview.R;
  */
 
 public class SnackBarUtil {
+    public static final   int Info = 1;
+    public static final  int Confirm = 2;
+    public static final  int Warning = 3;
+    public static final  int Alert = 4;
+
+
+    public static  int red = 0xfff44336;
+    public static  int green = 0xff4caf50;
+    public static  int blue = 0xff2195f3;
+    public static  int orange = 0xffffc107;
+
     /**
      * 普通的snackbar
      *
@@ -86,5 +97,53 @@ public class SnackBarUtil {
         cl.gravity = Gravity.CENTER_VERTICAL;
         snackbarView.setLayoutParams(cl);
         snackbar.show();
+    }
+
+    /**
+     * 自定义时间snackBar
+     */
+    public static void setDurationSnackBar(View view, String message, int duration) {
+        Snackbar snackbar = Snackbar.make(view,message, Snackbar.LENGTH_INDEFINITE).setDuration(duration);
+        switchType(snackbar, Alert);
+        snackbar.show();
+    }
+
+    //选择预设类型
+    private static void switchType(Snackbar snackbar,int type){
+        switch (type){
+            case Info:
+                setSnackbarColor(snackbar,blue);
+                break;
+            case Confirm:
+                setSnackbarColor(snackbar,green);
+                break;
+            case Warning:
+                setSnackbarColor(snackbar,orange);
+                break;
+            case Alert:
+                setSnackbarColor(snackbar,Color.YELLOW,red);
+                break;
+        }
+    }
+
+    /**
+     * 设置Snackbar背景颜色
+     */
+    public static void setSnackbarColor(Snackbar snackbar, int backgroundColor) {
+        View view = snackbar.getView();
+        if(view!=null){
+            view.setBackgroundColor(backgroundColor);
+        }
+    }
+
+    /**
+     * 设置Snackbar文字和背景颜色
+     */
+    public static void setSnackbarColor(Snackbar snackbar, int messageColor, int backgroundColor) {
+        View view = snackbar.getView();
+        if(view!=null){
+            view.setBackgroundColor(backgroundColor);
+            ((TextView) view.findViewById(R.id.snackbar_text)).setTextColor(messageColor);
+        }
     }
 }

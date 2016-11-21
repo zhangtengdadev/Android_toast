@@ -31,6 +31,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="snackbar的样式" />
+
+        <Button
+            android:id="@+id/bt_set_duration_snackbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="snackbar自定义时间" />
     </LinearLayout>
 
     <android.support.design.widget.CoordinatorLayout

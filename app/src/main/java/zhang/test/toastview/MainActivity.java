@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.bt_toast, R.id.bt_common_snackbar, R.id.bt_style_snackbar,
-            R.id.bt_state_snackbar})
+            R.id.bt_state_snackbar, R.id.bt_set_duration_snackbar})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_toast: // 吐司
@@ -46,7 +46,15 @@ public class MainActivity extends AppCompatActivity {
             case R.id.bt_state_snackbar: // snackBar的位置
                 openSateSnackBar(view);
                 break;
+
+            case R.id.bt_set_duration_snackbar: // 自定义时间和预选类型的设置
+                openSetDurationSnackBar(view);
+                break;
         }
+    }
+
+    private void openSetDurationSnackBar(View view) {
+        SnackBarUtil.setDurationSnackBar(view, "自定义时间snackbar", 5000);
     }
 
     private void openSateSnackBar(View view) {

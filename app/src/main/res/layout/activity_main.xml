@@ -20,15 +20,28 @@
 
         <Button
             android:id="@+id/bt_common_snackbar"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="普通的snackbar" />
 
         <Button
             android:id="@+id/bt_style_snackbar"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="snackbar的样式" />
-
     </LinearLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <Button
+            android:id="@+id/bt_state_snackbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:text="snackbar的位置" />
+    </android.support.design.widget.CoordinatorLayout>
 </LinearLayout>

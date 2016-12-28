@@ -8,3 +8,5 @@ Android 自定义toast
 | ------------ | -------- |
 | android.permission.INTERNET | 基础的网络权限 |
 | android.permission.ACCESS_NETWORK_STATE | 访问网络状态权限，为了获取当前网络连接类型 |
+
+测试一
